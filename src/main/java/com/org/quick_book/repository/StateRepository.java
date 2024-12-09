@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface StateRepository extends JpaRepository<CountryState, String> {
-    Optional<List<CountryState>> findByState(String state);
+    Optional<CountryState> findByState(String state);
 }

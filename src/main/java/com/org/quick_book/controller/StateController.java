@@ -22,13 +22,13 @@ public class StateController {
         return ResponseEntity.ok(countryStateService.getAllStates());
     }
 
-    @GetMapping("/")
-    public ResponseEntity<Object> getCitiesFromState(@RequestParam(name = "state") String state) {
-        return null;
+    @PostMapping("/addCities")
+    public ResponseEntity<Object> addCitiesToState(
+            @RequestParam(name = "state") String state,
+            @RequestParam(name = "cities") List<String> cities
+    ) {
+        countryStateService.addCitiesToState(state, cities);
+        return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Object> addState(@RequestParam(name = "stateName") String stateName) {
-        return null;
-    }
 }

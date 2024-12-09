@@ -9,5 +9,6 @@ public interface CountryStateService {
 
     public List<CountryState> getAllStates();
 
+    public void addCitiesToState(String state, List<String> cities);
 
 }
