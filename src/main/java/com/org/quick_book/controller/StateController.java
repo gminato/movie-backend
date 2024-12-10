@@ -2,8 +2,8 @@ package com.org.quick_book.controller;
 
 import com.org.quick_book.entity.CountryState;
 import com.org.quick_book.services.CountryStateService;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/state")
+@RequiredArgsConstructor
 public class StateController {
 
-    @Autowired
-    private CountryStateService countryStateService;
+    private final CountryStateService countryStateService;
 
 
     @GetMapping("/all")
